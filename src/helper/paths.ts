@@ -22,11 +22,13 @@ export function isSubpathOf(possiableParentPath: string, pathname: string) {
 }
 
 export function replaceHomePath(pathname: string) {
-  return pathname.substr(0, 2) === '~/' ? path.join(os.homedir(), pathname.slice(2)) : pathname;
+  // return pathname.substr(0, 2) === '~/' ? path.join(os.homedir(), pathname.slice(2)) : pathname;
+  return pathname;
 }
 
 export function resolvePath(from: string, to: string) {
-  return path.resolve(from, replaceHomePath(to));
+  // return path.resolve(from, replaceHomePath(to));
+  return from;
 }
 
 export function isInWorksapce(filepath: string) {
